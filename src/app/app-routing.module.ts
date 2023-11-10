@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddChambreComponent } from './manageChambre/add-chambre/add-chambre.component';
-import { ShowChambreComponent } from './manageChambre/show-chambre/show-chambre.component';
-import { DetailChambreComponent } from './manageChambre/detail-chambre/detail-chambre.component';
-import { UpdateChambreComponent } from './manageChambre/update-chambre/update-chambre.component';
-import { AddReservationComponent } from './manageReservation/add-reservation/add-reservation.component';
-import { ShowReservationComponent } from './manageReservation/show-reservation/show-reservation.component';
-import { DetailReservationComponent } from './manageReservation/detail-reservation/detail-reservation.component';
-import { UpdateReservationComponent } from './manageReservation/update-reservation/update-reservation.component';
+import { AddChambreComponent } from './gestion-chambre/add-chambre/add-chambre.component';
+import { ShowChambreComponent } from './gestion-chambre/show-chambre/show-chambre.component';
+import { DetailChambreComponent } from './gestion-chambre/detail-chambre/detail-chambre.component';
+import { UpdateChambreComponent } from './gestion-chambre/update-chambre/update-chambre.component';
+import { AddReservationComponent } from './gestion-reservation/add-reservation/add-reservation.component';
+import { ShowReservationComponent } from './gestion-reservation/show-reservation/show-reservation.component';
+import { DetailReservationComponent } from './gestion-reservation/detail-reservation/detail-reservation.component';
+import { UpdateReservationComponent } from './gestion-reservation/update-reservation/update-reservation.component';
 
 const routes: Routes = [
   {
