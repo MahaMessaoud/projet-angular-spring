@@ -1,4 +1,5 @@
-import { Chambre } from '../../model/Chambre';
+import { Chambre } from 'src/app/model/Chambre';
+import { Bloc } from './../../model/Bloc';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TypeChambre } from 'src/app/model/typeChambre';
@@ -12,6 +13,9 @@ import { Location } from '@angular/common';
 })
 export class ShowChambreComponent implements OnInit {
   chambres: any[] = [];
+  bloc:Bloc=new Bloc();
+  searchTerm: string = '';
+
 
   constructor(
     private sChambre: ChambreService,
@@ -29,7 +33,7 @@ export class ShowChambreComponent implements OnInit {
   }
   editCh(idChambre: any) {
     this.router.navigate(['/gestion-chambre/updateCh', idChambre]);
-    
+
   }
   deleteCh(ch: Chambre) {
     this.sChambre.deleteChambre(ch).subscribe((data) => {
@@ -42,5 +46,15 @@ export class ShowChambreComponent implements OnInit {
   addChambre() {
     this.router.navigate(['/gestion-chambre/addch']); // Naviguer vers la page d'ajout
   }
+
+  get filteredChambres() {
+    return this.chambres.filter((chambre) =>
+      chambre.idChambre.toString().includes(this.searchTerm) ||
+      chambre.numeroChambre.toString().includes(this.searchTerm) ||
+      (chambre.TypeChambre && chambre.TypeChambre.toString().toLowerCase().includes(this.searchTerm.toLowerCase()))||
+      (chambre.bloc && chambre.bloc.idBloc.toString().toLowerCase().includes(this.searchTerm.toLowerCase()))
+    );
+  }
+
 
 }

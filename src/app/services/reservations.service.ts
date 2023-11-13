@@ -32,9 +32,9 @@ export class ReservationsService {
   affecterReservationChambre(idReservation: String, idChambre: number): Observable<string> {
     return this.http.put<string>(this.url + '/affecterReservationAChambre/' + idReservation + '/' + idChambre, null);
   }
-  
+
   desaffacterReservationChambre(idReservation: String): Observable<string> {
-    return this.http.put<string>(this.url + '/desaffecterReservationAChambre/' + idReservation , null);
+    return this.http.put<string>(this.url + '/desaffecterReservationAChambre/' + idReservation, null);
   }
 
 }

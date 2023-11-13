@@ -69,7 +69,7 @@ desaffecterReservationDeChambre() {
       .subscribe(
         response => {
           console.log(response);
-
+          // Vous pouvez ajouter d'autres traitements ici si nécessaire
         },
         error => {
           console.error("Erreur lors de la désaffectation de la réservation de la chambre :", error);
@@ -79,6 +79,7 @@ desaffecterReservationDeChambre() {
     console.error("Veuillez sélectionner une réservation.");
   }
 }
+
 
 
 }

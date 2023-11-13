@@ -2,6 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Chambre } from '../../model/Chambre';
 import { Component, OnInit } from '@angular/core';
 import { ChambreService } from 'src/app/services/chambre.service';
+import { Bloc } from 'src/app/model/Bloc';
 
 @Component({
   selector: 'app-detail-chambre',
@@ -10,7 +11,9 @@ import { ChambreService } from 'src/app/services/chambre.service';
 })
 export class DetailChambreComponent implements OnInit {
   chambre: any;
-
+  idChambre:any;
+  blocs: Bloc[] = [];
+  selectedblocs!: number;
     constructor(
     private route: ActivatedRoute,
     private sChambre: ChambreService, private router:Router

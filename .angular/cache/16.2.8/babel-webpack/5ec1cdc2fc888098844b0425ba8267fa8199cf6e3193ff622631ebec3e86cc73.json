@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Bloc {}","map":{"version":3,"names":["Bloc"],"sources":["C:\\Users\\maham\\Desktop\\Angular-Spring\\miniProjet\\src\\app\\model\\Bloc.ts"],"sourcesContent":["export class Bloc{\r\n  idBloc!:number;\r\n}\r\n"],"mappings":"AAAA,OAAM,MAAOA,IAAI"},"metadata":{},"sourceType":"module","externalDependencies":[]}

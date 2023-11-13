@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class ShowReservationComponent implements OnInit {
   reservations: any[] = [];
   searchTerm: string = '';
-  chambre:Chambre=new Chambre();
 
 
   constructor(
@@ -48,8 +47,8 @@ export class ShowReservationComponent implements OnInit {
         reservation.anneeUniversite.toString().includes(this.searchTerm) ||
         reservation.commentaire
           .toLowerCase()
-          .includes(this.searchTerm.toLowerCase())
-      // Vous pouvez ajouter d'autres critères de filtrage ici
+          .includes(this.searchTerm.toLowerCase())||
+          (reservation.chambre && reservation.chambre.numeroChambre.toString().includes(this.searchTerm))
     );
   }
 }
