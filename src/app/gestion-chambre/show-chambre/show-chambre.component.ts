@@ -13,7 +13,11 @@ import { Location } from '@angular/common';
 export class ShowChambreComponent implements OnInit {
   chambres: any[] = [];
 
-  constructor(private sChambre: ChambreService, private router: Router,private location: Location) {}
+  constructor(
+    private sChambre: ChambreService,
+    private router: Router,
+    private location: Location
+  ) {}
   ngOnInit(): void {
     this.sChambre.getAllChambre().subscribe((data: any) => {
       console.log(data);
@@ -21,36 +25,22 @@ export class ShowChambreComponent implements OnInit {
     });
   }
   showDetails(idChambre: any) {
-    this.router.navigate(['/detailCh', idChambre]);
+    this.router.navigate(['/gestion-chambre/detailCh', idChambre]);
   }
   editCh(idChambre: any) {
-    this.router.navigate(['/updateCh', idChambre]);
-    this.router.navigate(['/allch']);
-    window.location.reload();
-
+    this.router.navigate(['/gestion-chambre/updateCh', idChambre]);
+    
   }
   deleteCh(ch: Chambre) {
     this.sChambre.deleteChambre(ch).subscribe((data) => {
       console.log(data);
       alert('Chambre supprimée avec succès');
-      this.router.navigate(['/allch']);
+      this.router.navigate(['/gestion-chambre/allch']);
       window.location.reload();
     });
-
   }
   addChambre() {
-    this.router.navigate(['addch']); // Naviguer vers la page d'ajout
+    this.router.navigate(['/gestion-chambre/addch']); // Naviguer vers la page d'ajout
   }
-  getTypeChambreLabel(type: TypeChambre): string {
-    switch (type) {
-      case TypeChambre.SIMPLE:
-        return 'SIMPLE';
-      case TypeChambre.DOUBLE:
-        return 'DOUBLE';
-      case TypeChambre.TRIPLE:
-        return 'TRIPLE';
-      default:
-        return 'Inconnu';
-    }
-  }
+
 }

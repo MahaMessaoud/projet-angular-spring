@@ -18,16 +18,16 @@ ngOnInit(): void {
   });
 }
 addReservation() {
-  this.router.navigate(['addRes']); // Naviguer vers la page d'ajout
+  this.router.navigate(['/gestion-reservation/addRes']); // Naviguer vers la page d'ajout
 }
 showDetails(idReservation: any) {
-  this.router.navigate(['/detailRes', idReservation]);}
+  this.router.navigate(['/gestion-reservation/detailRes', idReservation]);}
 
 deleteReservation(resv: Reservations) {
   this.sReservation.deleteReservation(resv).subscribe((data) => {
     console.log(data);
   }); }
 editReservation(idReservation: any) {
-  this.router.navigate(['/updateRes', idReservation]);}
+  this.router.navigate(['/gestion-reservation/updateRes', idReservation]);}
 
 }

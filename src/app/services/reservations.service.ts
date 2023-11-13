@@ -1,6 +1,6 @@
+import { Reservations } from './../model/Reservations';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Reservations } from '../model/Reservations';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -29,4 +29,11 @@ export class ReservationsService {
   updateReservation(id: number, reservation: Reservations): Observable<Reservations> {
     return this.http.put<Reservations>( 'http://localhost:8082/updateRes/' + id, reservation);
   }
+  affecterReservationChambre(idReservation: String, idChambre: number): Observable<string> {
+    return this.http.put<string>(this.url + '/affecterReservationAChambre/' + idReservation + '/' + idChambre, null);
+  }
+  desaffacterReservationChambre(idReservation: String): Observable<string> {
+    return this.http.put<string>(this.url + '/desaffecterReservationAChambre/' + idReservation , null);
+  }
+
 }

@@ -3,4 +3,5 @@ export class Reservations {
   anneeUniversite!:Date;
   estValide!:boolean;
   commentaire!:string;
+  
 }

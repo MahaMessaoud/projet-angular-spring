@@ -10,7 +10,8 @@ import { ChambreService } from 'src/app/services/chambre.service';
 })
 export class DetailChambreComponent implements OnInit {
   chambre: any;
-  constructor(
+
+    constructor(
     private route: ActivatedRoute,
     private sChambre: ChambreService, private router:Router
   ) {}
@@ -28,7 +29,7 @@ export class DetailChambreComponent implements OnInit {
     });
   }
   editCh(idChambre: any) {
-    this.router.navigate(['/updateCh', idChambre]);
+    this.router.navigate(['/gestion-chambre/updateCh', idChambre]);
   }
 
 }

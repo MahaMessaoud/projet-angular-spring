@@ -22,7 +22,7 @@ ngOnInit() {
 update() {
   this.sChambre.updateChambre(this.idChambre,this.ch).subscribe();
 console.log(this.ch);
-  this.route.navigate(['/allch']);
+  this.route.navigate(['/gestion-chambre/allch']);
 
 }
 }

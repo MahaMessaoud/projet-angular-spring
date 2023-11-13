@@ -28,4 +28,10 @@ export class ChambreService {
   updateChambre(id:number,chambre:Chambre): Observable<Chambre> {
     return this.http.put<Chambre>(this.url+'/updateChambre/'+id,chambre);
   }
+  affecterChambreABloc(idChambre: number, idBloc: number): Observable<string> {
+    return this.http.put<string>(this.url + '/affecterChambreABloc/' + idChambre + '/' + idBloc, null);
+  }
+  desaffecterChambreABloc(idChambre: number): Observable<string> {
+    return this.http.put<string>(this.url + '/desaffecterChambreABloc/' + idChambre , null);
+  }
 }

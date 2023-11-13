@@ -27,7 +27,7 @@ export class AddChambreComponent {
       this.chService.addChambre(ch).subscribe((data) => {
         console.log(data);
         alert('Chambre ajoutée avec succès');
-        this.router.navigate(['/allch']);
+        this.router.navigate(['/gestion-chambre/allch']);
 
       });
     }
