@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ReservationsService } from 'src/app/services/reservations.service';
 import { Chambre } from 'src/app/model/Chambre';
 
+
 @Component({
   selector: 'app-detail-reservation',
   templateUrl: './detail-reservation.component.html',
@@ -78,5 +79,6 @@ desaffecterReservationDeChambre() {
     console.error("Veuillez sélectionner une réservation.");
   }
 }
+
 
 }
